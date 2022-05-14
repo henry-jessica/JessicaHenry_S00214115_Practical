@@ -10,8 +10,9 @@
         >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -20,21 +21,45 @@
 
         <ListBox Name="blxCars"
                  Grid.Column="0"
-                 Grid.Row="0"
+                 Grid.Row="1"
                  Margin="10"
                  Grid.RowSpan="2"
                  SelectionChanged="lbxCars_SelectionChanged"
             />
         <TextBlock Name="tbxCarsDetails"
-                   Grid.Row="0"
+                   Grid.Row="1"
                    Grid.Column="1"
                    Margin="10"/>
         <Image Name="imgCar"
-                   Grid.Row="1"
+                   Grid.Row="2"
                    Grid.Column="1"
-                   Height="100"
-                   Width="80"
+                   Height="200"
+                   Width="300"
                    Margin="10"/>
-        
+        <StackPanel 
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="10"
+            Orientation="Horizontal">
+            <RadioButton GroupName="rdbG_Brands"
+                         Content="All" 
+                         Margin="10"
+                         Click="rdb_Click"/>
+            <RadioButton GroupName="rdbG_Brands"
+                         Content="BMW" 
+                         Margin="10"
+                         Click="rdb_Click"/>
+            <RadioButton GroupName="rdbG_Brands"
+                         Content="Hyundai" 
+                         Margin="10"
+                         Click="rdb_Click"/>
+            <RadioButton GroupName="rdbG_Brands"
+                         Margin="10"
+                         Content="Audi" 
+                         Click="rdb_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -45,6 +45,29 @@ namespace JessicaHenry_S00214115_Practical
             }
         }
 
+        private void rdb_Click(object sender, RoutedEventArgs e)
+        {
+            RadioButton rd = sender as RadioButton;
+            string brand = rd.Content.ToString().ToLower();
+            if (brand != null)
+            {
+                switch (brand)
+                {
+                    case "bmw":
+                        blxCars.ItemsSource = allCars.Where(c => c.Brand.Contains("BMW"));
+                        break;
+                    case "audi":
+                        blxCars.ItemsSource = allCars.Where(c => c.Brand.Contains("Audi"));
+                        break;
+                    case "hyundai":
+                        blxCars.ItemsSource = allCars.Where(c => c.Brand.Contains("Hyundai"));
+                        break;
+                   default:
+                        blxCars.ItemsSource = allCars; 
+                        break;
+                }
 
+            }
+        }
     }
 }
