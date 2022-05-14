@@ -42,7 +42,7 @@ namespace JessicaHenry_S00214115_Practical
     //Database 
     public class CarData : DbContext
     {
-        public CarData() : base("MyCarData") { }
+        public CarData() : base("MyCarDatav1") { }
         public DbSet<Car> Cars { get; set; }
 
     }

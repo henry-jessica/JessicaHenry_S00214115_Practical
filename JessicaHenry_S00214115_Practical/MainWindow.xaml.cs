@@ -31,12 +31,12 @@ namespace JessicaHenry_S00214115_Practical
             var query = from c in db.Cars
                         select c;
             allCars = query.ToList();
-            blxCars.ItemsSource = allCars;
+            lbxCars.ItemsSource = allCars;
         }
 
         private void lbxCars_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Car selected = blxCars.SelectedItem as Car; 
+            Car selected = lbxCars.SelectedItem as Car; 
            
             if (selected != null)
             {
@@ -54,16 +54,16 @@ namespace JessicaHenry_S00214115_Practical
                 switch (brand)
                 {
                     case "bmw":
-                        blxCars.ItemsSource = allCars.Where(c => c.Brand.Contains("BMW"));
+                        lbxCars.ItemsSource = allCars.Where(c => c.Brand.Contains("BMW"));
                         break;
                     case "audi":
-                        blxCars.ItemsSource = allCars.Where(c => c.Brand.Contains("Audi"));
+                        lbxCars.ItemsSource = allCars.Where(c => c.Brand.Contains("Audi"));
                         break;
                     case "hyundai":
-                        blxCars.ItemsSource = allCars.Where(c => c.Brand.Contains("Hyundai"));
+                        lbxCars.ItemsSource = allCars.Where(c => c.Brand.Contains("Hyundai"));
                         break;
                    default:
-                        blxCars.ItemsSource = allCars; 
+                        lbxCars.ItemsSource = allCars; 
                         break;
                 }
 

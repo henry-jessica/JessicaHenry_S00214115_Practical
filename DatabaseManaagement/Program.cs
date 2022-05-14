@@ -51,7 +51,7 @@ namespace DatabaseManaagement
                     Price = 45000,
                     Km = 56000,
                     Model = "SUV",
-                    Brand_Icon = "/Images/bmw.png",
+                    Brand_Icon = "Images/bmw.png",
                     Car_Image = "/Images/x6.jpg"
                 };
                 Car c4 = new Car()

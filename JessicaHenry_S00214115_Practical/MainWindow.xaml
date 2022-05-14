@@ -5,24 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JessicaHenry_S00214115_Practical"
         mc:Ignorable="d"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Title="MainWindow" Height="450" Width="800"
-        Loaded="WindowLoaded"
-        >
+        Loaded="WindowLoaded">
+    <Window.Resources>
+        <DataTemplate x:Key="DataTemplatesCar">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Brand_Icon}"
+                       Style="{StaticResource smallImageStyleKey}"/>
+                <TextBlock Text="{Binding Name}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ListBox Name="blxCars"
+        <ListBox ItemTemplate="{StaticResource DataTemplatesCar}"
+                 Name="lbxCars"
                  Grid.Column="0"
                  Grid.Row="1"
-                 Margin="10"
+                 Margin="15"
                  Grid.RowSpan="2"
                  SelectionChanged="lbxCars_SelectionChanged"
             />
