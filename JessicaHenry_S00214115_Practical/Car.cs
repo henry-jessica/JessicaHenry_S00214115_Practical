@@ -22,7 +22,15 @@ namespace JessicaHenry_S00214115_Practical
         //constructors
 
         //methods
-     
+        public decimal DecreasePrice(int descont)
+        {
+            return Price -= Price * descont;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}"; 
+        }
 
     }
 }
