@@ -34,6 +34,10 @@ namespace JessicaHenry_S00214115_Practical
         {
             return $"{Name}"; 
         }
+        public string CarDetails()
+        {
+            return $"{Name}\n{Description}\n{Brand}\n{Model}\n{Km} \n{Price:C}\n{DateRelease}";
+        }
     }
     //Database 
     public class CarData : DbContext

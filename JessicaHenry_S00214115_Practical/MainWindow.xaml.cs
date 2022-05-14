@@ -20,9 +20,31 @@ namespace JessicaHenry_S00214115_Practical
     /// </summary>
     public partial class MainWindow : Window
     {
+        CarData db = new CarData();
+        List<Car> allCars = new List<Car>();
         public MainWindow()
         {
             InitializeComponent();
         }
+        private void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            var query = from c in db.Cars
+                        select c;
+            allCars = query.ToList();
+            blxCars.ItemsSource = allCars;
+        }
+
+        private void lbxCars_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Car selected = blxCars.SelectedItem as Car; 
+           
+            if (selected != null)
+            {
+                tbxCarsDetails.Text = selected.CarDetails();
+                imgCar.Source = new BitmapImage(new Uri(selected.Car_Image, UriKind.Relative));
+            }
+        }
+
+
     }
 }

@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JessicaHenry_S00214115_Practical"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="WindowLoaded"
+        >
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Name="blxCars"
+                 Grid.Column="0"
+                 Grid.Row="0"
+                 Margin="10"
+                 Grid.RowSpan="2"
+                 SelectionChanged="lbxCars_SelectionChanged"
+            />
+        <TextBlock Name="tbxCarsDetails"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Margin="10"/>
+        <Image Name="imgCar"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Height="100"
+                   Width="80"
+                   Margin="10"/>
         
     </Grid>
 </Window>
