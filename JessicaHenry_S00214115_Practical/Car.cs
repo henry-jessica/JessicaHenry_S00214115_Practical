@@ -24,7 +24,7 @@ namespace JessicaHenry_S00214115_Practical
         //methods
         public decimal DecreasePrice(int descont)
         {
-            return Price -= Price * descont;
+            return Price - (Price * descont/100) ;
         }
 
         public override string ToString()
